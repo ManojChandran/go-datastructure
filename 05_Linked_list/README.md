@@ -4,7 +4,16 @@ A linked list is a linear collection of data elements whose order is not given b
 node 
 ```go
 type Node struct {
-    data int              // Data 
+    data int              // Data, it can be of any type
     next *Node            // Reference to next node
+}
+```
+
+now lets define the list, list will have Head and tail to hold the startng of the list and node pointer.
+
+```go
+type llist struct {
+	head *Node     // head of the node 
+	tail *Node     // current node 
 }
 ```

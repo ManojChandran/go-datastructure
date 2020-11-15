@@ -46,15 +46,17 @@ func (l *llist) deleteValue(value int) bool {
 	return false
 }
 
-func (l *llist) insertValue(value int) bool {
-	prev := l.head
+func (l *llist) insertValue(value, after int) bool {
+	node := &Node{data: value}
+	temp := l.head
 	for curr := l.head; curr != nil; curr = curr.next {
-		if curr.data == value {
-			l.tail = prev
-			l.tail.next = curr.next
+		if curr.data == after {
+			temp = curr.next
+			curr.next = node
+			curr = curr.next
+			curr.next = temp
 			return true
 		}
-		prev = curr
 	}
 	return false
 }
@@ -83,7 +85,7 @@ func main() {
 	mylist.liatAll()
 	mylist.AddValue(4)
 	mylist.liatAll()
-	mylist.AddValue(2)
+	mylist.insertValue(1, 1)
 	mylist.liatAll()
 	fmt.Println(mylist.isEmpty())
 }
