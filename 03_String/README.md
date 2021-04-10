@@ -1,7 +1,7 @@
 # STRING
-A string is a slice of bytes in Go. Strings can be created by enclosing a set of characters inside double quotes " ".
+A string is an immutable sequence of bytes. Strings can be created by enclosing a set of characters inside double quotes " ".
 
-Delcaring String
+# Delcaring String
 ```go
 	var fname string
 	fname = "MANOJ"
@@ -18,4 +18,11 @@ Same as the ARRAY...
     for _, c := range s {
         fmt.Println(string(c))
     }	
+```
+# Output
+```go
+    s := "hello world"
+    fmt.Println(s) // print hello world
+    fmt.Println(s[:]) // print hello world
+    fmt.Println(s[0:5]) // print hello
 ```
